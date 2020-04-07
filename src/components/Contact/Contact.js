@@ -7,40 +7,44 @@ class Contact extends React.Component {
             phone: '',
             email: '',
             address: '',
-            ec1Name: 'EC1 name',
-            ec1Phone: 'EC1 phone',
-            ec2Name: 'EC2 name',
-            ec2Phone: 'EC2 phone'
+            ec1Name: '',
+            ec1Phone: '',
+            ec2Name: '',
+            ec2Phone: ''
         }
     }
 
     componentDidMount() {
-        
-        console.log(1111111);
-        // const headers = {
-        //     'Content-Type': 'application/json',
-        //     'access-token': '',
-        //     'Access-Control-Allow-Origin': '*',
-        //   }
-        // let headers = new Headers();
-        // headers.append('Content-Type', 'application/json');
-        // headers.append('Accept', 'application/json');
-        
-        // headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
-        // headers.append('Access-Control-Allow-Credentials', 'true');
-
-        // headers.append('GET', 'POST', 'OPTIONS');
-        //const proxyurl = "https://cors-anywhere.herokuapp.com/";
         const request = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             //headers: headers,
-            body: { "username" :"user1" }
+            body:JSON.stringify( { "username" :"user1" }),
         };
         
         fetch('/users/getContact', request)
             .then(response => response.json())
-            .then(data => this.setState({ phone: data.phone, email: data.email, address: data.address }));
+            .then(data => this.setState({ 
+                phone: data.phone, 
+                email: data.email, 
+                address: data.address
+            }));
+         
+            const requestEmergency = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json'},
+                //headers: headers,
+                body:JSON.stringify( { "username" :"user1" }),
+            };
+            
+            fetch('/users/getEmergency', requestEmergency)
+                .then(response => response.json())
+                .then(data => this.setState({ 
+                    ec1Name: data.contact1.name, 
+                    ec1Phone: data.contact1.phone, 
+                    ec2Name: data.contact2.name,
+                    ec2Phone:data.contact2.phone,
+                }));
     }
 
     render() {
@@ -58,7 +62,7 @@ class Contact extends React.Component {
                                 <h5 style={{ textAlign: 'center' }}>Contact</h5>
                                 <div className="form-group">
                                     <label htmlFor="Phone">Phone</label>
-                                    <input type="text" className="form-control" value={this.state.phone} onChange={this.onPhoneChange.bind(this)} />
+                                    <input type="text" className="form-control" value={phone} onChange={this.onPhoneChange.bind(this)} />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="Email">Email address</label>
