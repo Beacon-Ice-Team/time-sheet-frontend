@@ -53,6 +53,7 @@ class Contact extends React.Component {
 
         return (
 
+            <div className="Login">
             <div class="page-wrapper" >
                 <br></br>
                 <div class="container-fluid">
@@ -96,11 +97,12 @@ class Contact extends React.Component {
                                 </div>
 
 
-                                <button type="submit" className="btn btn-primary" style={{ float: 'center' }}>Submit</button>
+                                <button type="submit" className="btn btn-primary" style={{ float: 'center' }} onClick={() => alert('saved')}>Save Changes</button>
                             </form>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
 
 
