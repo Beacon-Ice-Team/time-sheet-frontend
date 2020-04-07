@@ -52,7 +52,7 @@ class Contact extends React.Component {
             <div class="page-wrapper" >
                 <br></br>
                 <div class="container-fluid">
-                    <div class="card" style={{ width: 500, textAlign: 'center' }}>
+                    <div class="card" style={{ width: 500, textAlign: 'center', margin: 'auto' }}>
                         <div style={{ textAlign: 'left' }}>
                             <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
                                 <h5 style={{ textAlign: 'center' }}>Contact</h5>
