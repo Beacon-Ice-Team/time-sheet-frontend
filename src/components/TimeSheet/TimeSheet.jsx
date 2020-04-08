@@ -8,6 +8,7 @@ class TimeSheet extends React.Component {
             <div>
                 <button type="button" class="btn btn-primary">Set Default</button>
             </div>
+            <form>
             <table class="table">
                 <thead>
                     <td><b><u>Date</u></b></td>
@@ -93,6 +94,7 @@ class TimeSheet extends React.Component {
                 </tbody>
             </table>
             <button type="button" class="btn btn-primary">Submit</button>
+            </form>
             </div>
         )
     }
