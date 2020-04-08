@@ -100,6 +100,7 @@ class Contact extends React.Component {
                                     <button type="submit" className="btn btn-primary" style={{ float: 'center' }} onClick={() => this.saveFunction()}>Save Changes</button>
                                 </form>
                             </div>
+
                         </div>
                     </div>
                 </div>
