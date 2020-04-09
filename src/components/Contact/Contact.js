@@ -29,7 +29,7 @@ class Contact extends React.Component {
                 email: data.email,
                 address: data.address
             }));
-
+            
         const requestEmergency = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
